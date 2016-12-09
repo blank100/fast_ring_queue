@@ -41,13 +41,14 @@ C代码实现见:https://github.com/dodng/fast_ring_queue
 ###3.1 入队速度=出队速度
 
 这是环形队列的常态，即入队速度和出队速度大致一样，即使某个突然时刻入队速度陡然变高或者出队速度陡然变低，都能通过队列这个缓冲区把这些数据先存起来，等到能处理的时候再处理。
+![architecture](https://github.com/dodng/fast_ring_queue/blob/master/doc/111.jpg)
 
 
 
 ###3.2 入队速度>出队速度
 
 在这种情况下，队列“写入”的速度>“读取”的速度，想象当这种状态持续一段时间之后，队列中大多数全是写入但没读取的元素，当又一个新的元素产生时，可以把这个新元素drop掉或者放在另一个缓冲区保存起来，这种情况的出现不是个好事情，说明你需要对出队处理元素的算法或逻辑优化处理速度了。
-
+![architecture](https://github.com/dodng/fast_ring_queue/blob/master/doc/2222.jpg)
  
 
 
@@ -57,6 +58,7 @@ C代码实现见:https://github.com/dodng/fast_ring_queue
 ###3.3 入队速度<出队速度
 
 在这种情况下，队列“读取”速度>“写入”速度，这种情况说明程序出队处理元素的速度很快，这是比较好的情况，唯一不足的是读取队列的时候可能经常会轮询队列是否有新的元素，造成cpu占用过高。
+![architecture](https://github.com/dodng/fast_ring_queue/blob/master/doc/33333.jpg)
 
  
 
