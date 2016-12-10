@@ -16,6 +16,6 @@ There is a very clever way, in the queue of each element of the head plus an ele
 
  
 ##3.Test
-In the CentOS 5.5 (cpu per core frequency 1200MHz) on a simple device test a bit. The size of the circular queue is 10000, the data size of the element is 4 bytes, the element that can be written and read every second is 250 million, namely 250pps
+In the CentOS 5.5 (cpu per core frequency 1200MHz) on a simple device test a bit. The size of the circular queue is 10000, the data size of the element is 4 bytes, the element that can be written and read every second is 250 million, namely 2.5Mpps
 
 
